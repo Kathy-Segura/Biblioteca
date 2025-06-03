@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contáctanos - Hon Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Styles for Contact Us Section -->
+  <style>
+    :root {
+      --color-bg: #fff6cc;
+      --color-primary: #17364a;
+      --color-secondary: #8a4a44;
+      --font-title: ' Merriweather', serif;
+      --font-body: 'Nunito', sans-serif;
+    }
+    .contact-us {
+      background: var(--color-bg);
+      padding: 3rem 2rem;
+    }
+    .contact-us .section-title {
+      text-align: center;
+      margin: 2rem 0;
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: var(--color-primary);
+    }
+    .contact-us__container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .contact-us__form {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .form-group label {
+      font-family: var(--font-title);
+      margin-bottom: 0.5rem;
+      display: block;
+      color: var(--color-primary);
+    }
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      background: #17364a;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .input-wrapper input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--color-bg);
+      font-size: 1rem;
+    }
+    .clear-input {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-bg);
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-us__form textarea {
+      width: 100%;
+      resize: none;
+      min-height: 150px;
+      padding: 1rem;
+      border: none;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      background: #17364a;
+      color: var(--color-bg);
+      border-radius: 12px;
+    }
+    .btn--submit {
+      align-self: center;
+      padding: 0.75rem 2rem;
+      margin-top: 1rem;
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .contact-us__terms {
+      flex: 1 1 300px;
+      background: #17364a;
+      color: var(--color-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .terms-title {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .terms-content {
+      flex: 1;
+      overflow-y: auto;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    .terms-accept {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checkbox {
+      width: 2rem;
+      height: 2rem;
+      background: var(--color-bg);
+      border: none;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .checkbox .fas {
+      color: var(--color-secondary);
+    }
+    @media (max-width: 768px) {
+      .contact-us__container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <!--<a href="index.html"><img src="../hb/images/Isotipo-hon.png" alt="Logo Hon Design"></a>-->
+      <img src="../HD/images/Isotipo-hon.png" alt="Logo Hon Design">
+    </div>
+    <div class="header__search">
+      <label for="search-input" class="sr-only">Buscar nivel</label>
+      <input type="text" id="search-input" placeholder="Enter value">
+      <button type="button" id="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+    </div>
+    <div class="header__auth">
+      <button class="btn btn--primary">Iniciar sesión</button>
+      <button class="btn btn--secondary">Registrarse</button>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Mostrar menú">☰</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Conócenos</a></li>
+      <li class="nav__item"><a href="contactanos.html" class="nav__link active">Contacto</a></li>
+      <li class="nav__item"><a href="biblioteca.html" class="nav__link">Biblioteca</a></li>
+      <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+      <li class="nav__item"><a href="ayuda.html" class="nav__link">Ayuda</a></li>
+      <li class="nav__item"><a href="perfil.html" class="nav__link">Perfil</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Us Section -->
+  <main class="contact-us">
+    <h2 class="section-title">CONTÁCTANOS</h2>
+    <div class="contact-us__container">
+      <!-- Form Column -->
+      <form class="contact-us__form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Nombre y Apellido</label>
+          <div class="input-wrapper">
+            <input type="text" id="name" name="name" placeholder="Enter value">
+            <button type="button" class="clear-input" aria-label="Limpiar campo">&times;</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo Electrónico</label>
+          <div class="input-wrapper">
+            <input type="email" id="email" name="email" placeholder="Enter value">
+            <button type="button" class="clear-input" aria-label="Limpiar campo">&times;</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Asunto</label>
+          <textarea id="subject" name="subject" placeholder="Enter value"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--submit">Enviar</button>
+      </form>
+
+      <!-- Terms Column -->
+      <div class="contact-us__terms">
+        <h3 class="terms-title">Términos y Condiciones</h3>
+        <div class="terms-content">
+          <p>Bienvenido a Hon Design, una plataforma digital especializada en servicios personalizados de edición, corrección ortotipográfica y de estilo, diseño de portadas e ilustraciones para libros. Al acceder y utilizar nuestro sitio web, usted acepta los presentes términos y condiciones. Todos nuestros servicios se realizan bajo solicitud directa y previa coordinación con el cliente, incluyendo tiempos de entrega y tarifas. El contenido creado por Hon Design está protegido por derechos de autor, y aunque el cliente conserva todos los derechos sobre su obra original, Hon Design podrá exhibir ejemplos de los trabajos con fines promocionales, salvo acuerdo contrario por escrito. Nos comprometemos a mantener la confidencialidad de todo el material recibido y a no divulgar información sin autorización. Los pagos se acordarán previamente y podrán requerir un anticipo; no se realizarán reembolsos una vez iniciado el trabajo, salvo en caso de incumplimiento por parte de Hon Design. El usuario se compromete a proporcionar información veraz y a no infringir derechos de terceros. Hon Design se reserva el derecho de modificar estos términos en cualquier momento, publicando las actualizaciones en esta misma página. El uso continuo del sitio implica la aceptación de dichas modificaciones. Estos términos se rigen por las leyes aplicables en la jurisdicción del titular de Hon Design, y cualquier controversia será resuelta ante los tribunales competentes. Para consultas, puede escribirnos a hondesign@gmail.com.</p>
+        </div>
+        <div class="terms-accept">
+          <button type="button" class="checkbox"><i class="fas fa-check"></i></button>
+          <label for="terms">He leído y aceptado las políticas de seguridad</label>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h2 class="footer__title">Contactos</h2>
+      <p><i class="fas fa-phone-alt"></i> 505-56788905</p>
+      <p><i class="fas fa-envelope"></i> HonDesign@gmail.com.ni</p>
+      <p><i class="fas fa-globe"></i> www.HonDesign.com</p>
+    </div>
+    <div class="footer__column">
+      <h2 class="footer__title">Redes Sociales</h2>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> @Hon_Design</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> HonDesign</a></li>
+        <li><a href="#"><i class="fab fa-x"></i> @HonDesign77</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

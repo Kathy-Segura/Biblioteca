@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - Hon Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Section-specific Styles -->
+  <style>
+    .profile-section { background: var(--color-bg); padding: 3rem 2rem; }
+    .section-title { text-align: center; font-family: var(--font-title); font-size: 2rem; color: var(--color-secondary); margin-bottom: 2rem; }
+    .profile-container { display: flex; gap: 2rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; align-items: flex-start; }
+    .form-column { flex: 1 1 300px; display: flex; flex-direction: column; gap: 1.5rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; width: 100%; }
+    .form-group label { font-family: var(--font-title); color: var(--color-secondary); font-size: 1.1rem; }
+    .form-group input { padding: 0.75rem 1rem; font-family: var(--font-body); font-size: 1rem; border: none; border-radius: 6px; background: #17354a; color: var(--color-bg); width: 100%; }
+    .form-group input:disabled { opacity: 0.7; }
+    .picture-column { flex: 1 1 300px; display: flex; justify-content: center; }
+    .profile-picture { width: 100%; max-width: 300px; height: auto; border-radius: 12px; background: #e0dddb; object-fit: cover; }
+    .btn--edit, .btn--save { align-self: center; padding: 0.75rem 2rem; background: var(--color-primary); color: var(--color-bg); border: none; border-radius: 4px; font-family: var(--font-body); font-weight: 600; cursor: pointer; margin-top: 1rem; }
+    .hidden { display: none; }
+    @media (max-width: 768px) { .profile-container { flex-direction: column; align-items: center; } }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo"><a href="index.html"><img src="../HD/images/Isotipo-hon.png" alt="Logo Hon Design"></a></div>
+    <div class="header__search">
+      <label for="search-input" class="sr-only">Buscar nivel</label>
+      <input type="text" id="search-input" placeholder="Enter value">
+      <button type="button" id="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+    </div>
+    <div class="header__auth">
+      <button class="btn btn--primary">Iniciar sesión</button>
+      <button class="btn btn--secondary">Registrarse</button>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Mostrar menú">☰</button>
+  </header>
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Conócenos</a></li>
+      <li class="nav__item"><a href="contactanos.html" class="nav__link">Contacto</a></li>
+      <li class="nav__item"><a href="biblioteca.html" class="nav__link">Biblioteca</a></li>
+      <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+      <li class="nav__item"><a href="ayuda.html" class="nav__link">Ayuda</a></li>
+      <li class="nav__item"><a href="perfil.html" class="nav__link active">Perfil</a></li>
+    </ul>
+  </nav>
+  <!-- Profile Section -->
+  <main class="profile-section">
+    <!-- View Profile -->
+    <div class="profile-view">
+      <h2 class="section-title">Datos Personales</h2>
+      <div class="profile-container">
+        <div class="form-column">
+          <div class="form-group">
+            <label for="view-username">Nombre de Usuario:</label>
+            <input type="text" id="view-username" value="Rocky Rosales" disabled>
+          </div>
+          <div class="form-group">
+            <label for="view-email">Correo Electrónico:</label>
+            <input type="email" id="view-email" value="rocks@ejemplo.com" disabled>
+          </div>
+          <div class="form-group">
+            <label for="view-phone">Teléfono:</label>
+            <input type="text" id="view-phone" value="+34 600 123 456" disabled>
+          </div>
+          <div class="form-group">
+            <label for="view-age">Edad:</label>
+            <input type="number" id="view-age" value="30" disabled>
+          </div>
+          <div class="form-group">
+            <label for="view-gender">Sexo:</label>
+            <input type="text" id="view-gender" value="Masculino" disabled>
+          </div>
+          <div class="form-group">
+            <label for="view-country">País:</label>
+            <input type="text" id="view-country" value="Alemania" disabled>
+          </div>
+          <button class="btn--edit">Editar Perfil</button>
+        </div>
+        <div class="picture-column">
+          <img src="../HD/images/rocky.jpeg" alt="Foto de Perfil" class="profile-picture">
+        </div>
+      </div>
+    </div>
+    <!-- Edit Profile -->
+    <div class="profile-edit hidden">
+      <h2 class="section-title">Datos Personales</h2>
+      <div class="profile-container">
+        <div class="form-column">
+          <div class="form-group">
+            <label for="edit-username">Nombre de Usuario:</label>
+            <input type="text" id="edit-username" placeholder="Ingrese nombre">
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Correo Electrónico:</label>
+            <input type="email" id="edit-email" placeholder="Ingrese email">
+          </div>
+          <div class="form-group">
+            <label for="edit-phone">Teléfono:</label>
+            <input type="text" id="edit-phone" placeholder="Ingrese teléfono">
+          </div>
+          <div class="form-group">
+            <label for="edit-age">Edad:</label>
+            <input type="number" id="edit-age" placeholder="Ingrese edad">
+          </div>
+          <div class="form-group">
+            <label for="edit-gender">Sexo:</label>
+            <input type="text" id="edit-gender" placeholder="Ingrese sexo">
+          </div>
+          <div class="form-group">
+            <label for="edit-country">País:</label>
+            <input type="text" id="edit-country" placeholder="Ingrese país">
+          </div>
+          <button class="btn--save">Guardar</button>
+        </div>
+        <div class="picture-column">
+          <img src="rocky.jpeg" alt="Foto de Perfil" class="profile-picture">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h2 class="footer__title">Contactos</h2>
+      <p><i class="fas fa-phone-alt"></i> 505-56788905</p>
+      <p><i class="fas fa-envelope"></i> HonDesign@gmail.com.ni</p>
+      <p><i class="fas fa-globe"></i> www.HonDesign.com</p>
+    </div>
+    <div class="footer__column">
+      <h2 class="footer__title">Redes Sociales</h2>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> @Hon_Design</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> HonDesign</a></li>
+        <li><a href="#"><i class="fab fa-x"></i> @HonDesign77</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+    // Toggle between view and edit sections
+    const editBtn = document.querySelector('.btn--edit');
+    const saveBtn = document.querySelector('.btn--save');
+    const viewSection = document.querySelector('.profile-view');
+    const editSection = document.querySelector('.profile-edit');
+
+    editBtn.addEventListener('click', () => {
+      viewSection.classList.add('hidden');
+      editSection.classList.remove('hidden');
+    });
+
+    saveBtn.addEventListener('click', () => {
+      // Add save logic here
+      editSection.classList.add('hidden');
+      viewSection.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda - Hon Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Section-specific Styles -->
+  <style>
+    :root {
+      --color-bg: #fff6cc;
+      --color-primary: #17364a;
+      --color-secondary: #721e22;
+      --font-title: 'Merriweather', serif;
+      --font-body: 'Nunito', sans-serif;
+    }
+    .report-section {
+      background: var(--color-bg);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .report-section .section-title {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: var(--color-primary);
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .report-form {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .form-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .form-group label {
+      font-family: var(--font-title);
+      color: var(--color-primary);
+      font-size: 1.1rem;
+    }
+    .input-wrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      background: #17364a;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .input-wrapper input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: transparent;
+      color: var(--color-bg);
+      font-size: 1rem;
+      font-family: var(--font-body);
+    }
+    .input-wrapper .clear-input {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: var(--color-bg);
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .report-form textarea {
+      width: 100%;
+      min-height: 180px;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: #17364a;
+      color: var(--color-bg);
+      resize: vertical;
+    }
+    .btn--submit {
+      align-self: center;
+      padding: 0.75rem 2rem;
+      background: var(--color-primary);
+      color: var(--color-bg);
+      border: none;
+      border-radius: 4px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .report-section {
+        padding: 2rem 1rem;
+      }
+      .report-form {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo"><a href="index.html"><img src="../HD/images/Isotipo-hon.png" alt="Logo Hon Design"></a></div>
+    <div class="header__search">
+      <label for="search-input" class="sr-only">Buscar nivel</label>
+      <input type="text" id="search-input" placeholder="Enter value">
+      <button type="button" id="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+    </div>
+    <div class="header__auth">
+      <button class="btn btn--primary">Iniciar sesión</button>
+      <button class="btn btn--secondary">Registrarse</button>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Mostrar menú">☰</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Conócenos</a></li>
+      <li class="nav__item"><a href="contactanos.html" class="nav__link">Contacto</a></li>
+      <li class="nav__item"><a href="biblioteca.html" class="nav__link">Biblioteca</a></li>
+      <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+      <li class="nav__item"><a href="ayuda.html" class="nav__link active">Ayuda</a></li>
+      <li class="nav__item"><a href="perfil.html" class="nav__link">Perfil</a></li>
+    </ul>
+  </nav>
+
+  <!-- Help/Report Section -->
+  <main class="report-section">
+    <h2 class="section-title">Reporte de errores</h2>
+    <form class="report-form" action="#" method="post">
+      <div class="form-group">
+        <label for="username">Nombre de Usuario:</label>
+        <div class="input-wrapper">
+          <input type="text" id="username" name="username" placeholder="Enter value">
+          <button type="button" class="clear-input" aria-label="Limpiar campo">&times;</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="useremail">Correo electrónico:</label>
+        <div class="input-wrapper">
+          <input type="email" id="useremail" name="useremail" placeholder="Enter value">
+          <button type="button" class="clear-input" aria-label="Limpiar campo">&times;</button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="errorDesc">Descripción del error:</label>
+        <textarea id="errorDesc" name="errorDesc" placeholder="Enter value"></textarea>
+      </div>
+      <button type="submit" class="btn btn--submit">Enviar</button>
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h2 class="footer__title">Contactos</h2>
+      <p><i class="fas fa-phone-alt"></i> 505-56788905</p>
+      <p><i class="fas fa-envelope"></i> HonDesign@gmail.com.ni</p>
+      <p><i class="fas fa-globe"></i> www.HonDesign.com</p>
+    </div>
+    <div class="footer__column">
+      <h2 class="footer__title">Redes Sociales</h2>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> @Hon_Design</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> HonDesign</a></li>
+        <li><a href="#"><i class="fab fa-x"></i> @HonDesign77</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

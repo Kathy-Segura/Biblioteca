@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Hon Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .section-title {
+      text-align: center;
+      margin: 3rem 0 1.5rem;
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: var(--color-secondary);
+    }
+    .authors-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .author-card {
+      text-align: center;
+    }
+    .author-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .author-name {
+      margin-top: 0.75rem;
+      font-family: var(--font-title);
+      color: var(--color-secondary);
+      font-size: 1rem;
+    }
+    .author-card__button {
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--color-secondary);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--color-secondary);
+      font-family: var(--font-body);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .reviews-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .review {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .review img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .review-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .review-content h3 {
+      font-family: var(--font-title);
+      color: var(--color-secondary);
+      margin-bottom: 0.25rem;
+    }
+    .review-content small {
+      font-size: 0.9rem;
+      color: var(--color-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .review-content p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: var(--color-primary);
+      margin-bottom: 1rem;
+    }
+    .review-content .btn--secondary {
+      align-self: flex-end;
+    }
+    @media (max-width: 768px) {
+      .review {
+        flex-direction: column;
+        align-items: center;
+      }
+      .review img {
+        width: 100%;
+        max-width: 300px;
+      }
+      .review-content .btn--secondary {
+        align-self: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo">
+      <!--<a href="index.html"><img src="/HD/images/Isotipo-hon.png" alt="Logo Hon Design"></a> -->
+      <img src="../HD/images/Isotipo-hon.png" alt="Logo Hon Design">
+    </div>
+    <div class="header__search">
+      <label for="search-input" class="sr-only">Buscar nivel</label>
+      <input type="text" id="search-input" placeholder="Enter value">
+      <button type="button" id="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+    </div>
+    <div class="header__auth">
+      <button class="btn btn--primary">Iniciar sesión</button>
+      <button class="btn btn--secondary">Registrarse</button>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Mostrar menú">☰</button>
+</header>
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Conócenos</a></li>
+      <li class="nav__item"><a href="contactanos.html" class="nav__link">Contacto</a></li>
+      <li class="nav__item"><a href="biblioteca.html" class="nav__link">Biblioteca</a></li>
+      <li class="nav__item"><a href="blog.html" class="nav__link active">Blog</a></li>
+      <li class="nav__item"><a href="ayuda.html" class="nav__link">Ayuda</a></li>
+      <li class="nav__item"><a href="perfil.html" class="nav__link">Perfil</a></li>
+    </ul>
+  </nav>
+  <!-- Main Content -->
+  <main>
+    <!-- Authors Section -->
+    <h2 class="section-title">AUTORES/ESCRITORES</h2>
+    <section class="authors-section">
+      <div class="author-card">
+        <!-- <img src="../hb/images/foto autora.jpeg" alt="Valentine Blacke">-->
+         <img src="../HD/images/foto autora.jpeg" alt="Valentine Blacke">
+        <div class="author-name">Valentine Blacke</div>
+        <button class="author-card__button">Ver más</button>
+      </div>
+      <div class="author-card">
+        <img src="../HD/images/avatar de autores-03.png" alt="Cerezo">
+        <div class="author-name">Cerezo</div>
+        <button class="author-card__button">Ver más</button>
+      </div>
+      <div class="author-card">
+        <img src="../HD/images/avatar de autores-04.png" alt="GG Allen">
+        <div class="author-name">GG Allen</div>
+        <button class="author-card__button">Ver más</button>
+      </div>
+      <div class="author-card">
+        <img src="../HD/images/avatar de autores-02.png" alt="Mark Cruz">
+        <div class="author-name">Mark Cruz</div>
+        <button class="author-card__button">Ver más</button>
+      </div>
+    </section>
+    <!-- Reviews Section -->
+    <h2 class="section-title">RESEÑAS</h2>
+    <section class="reviews-section">
+      <div class="review">
+        <img src="../HD/images/cuentos macabros.jpg" alt="Cuentos Macabros">
+        <div class="review-content">
+          <h3>Título del Artículo</h3>
+          <small>23 de marzo 2025</small>
+          <p>"Cuentos macabros" es una exquisita y perturbadora selección de los relatos más oscuros y emblemáticos de Edgar Allan Poe, maestro indiscutible del terror psicológico y lo gótico. Esta antología, publicada en 2009 por Edelvives, no solo reúne algunas de sus obras más memorables, como El gato negro, El corazón delator, La caída de la Casa Usher y El barril de amontillado, sino que lo hace en una edición única: traducida por Julio Cortázar, uno de los grandes escritores latinoamericanos y ferviente admirador de Poe, e ilustrada por Benjamin Lacombe, cuyo arte etéreo y sombrío añade una dimensión visual fascinante a cada historia.
+Cada cuento explora los rincones más oscuros de la mente humana, los miedos más íntimos y las obsesiones que rozan la locura. Poe juega con la psicología del lector, creando atmósferas densas, inquietantes y poéticas, donde lo sobrenatural y lo real se funden hasta volverse indistinguibles. Esta edición no es solo una lectura, es una experiencia estética completa: palabras y dibujos se entrelazan para envolver al lector en un universo tan bello como siniestro.</p>
+          <button class="btn btn--secondary">Leer más</button>
+        </div>
+      </div>
+      <div class="review">
+        <img src="../HD/images/El gato viajero.jpg" alt="Crónicas del gato viajero">
+        <div class="review-content">
+          <h3>Título del Artículo</h3>
+          <small>23 de marzo 2025</small>
+          <p>"Crónicas de un gato viajero" es una emotiva y encantadora novela escrita por Hiro Arikawa, publicada originalmente en Japón en 2012 y traducida al español en años posteriores. Esta historia está narrada, en buena parte, desde el punto de vista de Nana, un gato callejero de espíritu libre y mirada aguda, que tras ser rescatado por un joven llamado Satoru, inicia junto a él un viaje por diferentes rincones de Japón.
+Pero no se trata de un viaje turístico, sino de una ruta cargada de recuerdos, despedidas y reencuentros con personas importantes del pasado de Satoru. A través de este recorrido, la historia va revelando poco a poco los lazos que lo unen con quienes lo rodean, todo mientras Nana observa el mundo con esa mezcla de ternura, sarcasmo y sensibilidad tan propia de los gatos.
+Aunque puede parecer una historia sencilla, "Crónicas de un gato viajero" es profundamente humana y conmovedora. Habla de la amistad, la gratitud, la pérdida, y del amor incondicional que puede existir entre un ser humano y su mascota. Es una novela que acaricia el alma, ideal para quienes disfrutan de lecturas sensibles, con un mensaje esperanzador y un toque melancólico.</p>
+          <button class="btn btn--secondary">Leer más</button>
+        </div>
+      </div>
+      <div class="review">
+        <img src="../HD/images/cronicas de un forence.jpg" alt="Crónicas de un forense">
+        <div class="review-content">
+          <h3>Título del Artículo</h3>
+          <small>23 de marzo 2025</small>
+          <p>"Crónicas de un forense" es una obra del médico y docente uruguayo Hugo Rodríguez Almada, publicada originalmente en septiembre de 2014 por la editorial Fin de Siglo. Esta edición, titulada "Crónicas de un forense. Historias de personas", ofrece una mirada íntima y reflexiva sobre la labor forense, abordando casos reales que el autor presenció a lo largo de más de dos décadas de trayectoria en la medicina legal.
+En sus páginas, Rodríguez Almada relata con sensibilidad y precisión nueve casos emblemáticos, entre ellos, el de un laboratorio que falsificaba resultados de pruebas de VIH, el asesinato de un hincha de fútbol y el suicidio de un adolescente. Lejos del sensacionalismo, el autor se centra en la dimensión humana de cada historia, explorando las emociones, dilemas éticos y contextos sociales que rodean a cada suceso.</p>
+          <button class="btn btn--secondary">Leer más</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h2 class="footer__title">Contactos</h2>
+      <p><i class="fas fa-phone-alt"></i> 505-56788905</p>
+      <p><i class="fas fa-envelope"></i> HonDesign@gmail.com.ni</p>
+      <p><i class="fas fa-globe"></i> www.HonDesign.com</p>
+    </div>
+    <div class="footer__column">
+      <h2 class="footer__title">Redes Sociales</h2>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> @Hon_Design</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> HonDesign</a></li>
+        <li><a href="#"><i class="fab fa-x"></i> @HonDesign77</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hon Design</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;400&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    :root {
+      --color-primary: #1C355E;
+      --color-secondary: #8E7F3C;
+      --color-bg: #FFF5D2;
+      --color-text: #333;
+      --table-header: #17364A;
+      --service-bg: #B2A35E;
+      --price-bg: #566568;
+      --unit-bg: #B2A35E;
+      --card-red: #731E25;
+      --card-brown: #754F20;
+      --categories-bg: #B2A35E;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .header__logo img {
+      max-height: 150px;
+    }
+
+    .header__search {
+      position: relative;
+      flex: 1;
+      margin: 0 2rem;
+      max-width: 400px;
+    }
+
+    .header__search input {
+      width: 100%;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background-color: #17364A;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .header__search button {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .btn--primary {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    .btn--secondary {
+      background-color: var(--color-primary);
+      color: white;
+    }
+
+    /* Navigation */
+    .nav {
+      background: transparent;
+    }
+
+    .nav__toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .nav__list {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+      padding: 15px 0;
+    }
+
+    .nav__link {
+      color: var(--color-primary);
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .nav__link.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* ----------------------------------
+       Sección Paquete Básico (“Lanza tu Libro”)
+       ---------------------------------- */
+    .basic-package {
+      padding: 3rem 0;
+    }
+
+    .package-title-big {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      color: var(--card-red);
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--card-red);
+      margin-bottom: 2rem;
+    }
+
+    .package-flex {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .package-image {
+      flex: 1 1 300px;
+      max-width: 400px;
+    }
+
+    .package-image img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .package-details {
+      flex: 1 1 300px;
+      background-color: var(--card-red);
+      color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .details-section h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .details-section ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .details-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .botton {
+  justify-content: center;
+  display: flex;
+  margin: 10px;
+}
+.botton-comprar {
+  background-color: #721e22;
+  border-color: transparent;
+  border-radius: 10px;
+  align-items: center;
+  padding: 15px 30px;
+  margin: 10px;
+  color: #fff6cc;
+  font-size: 18px;
+  text-align: center;
+}
+
+.botton-comprar:hover {
+  background-color: #8b3b3f;
+}
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .package-flex {
+        flex-direction: column;
+        align-items: center;
+      }
+      .package-details {
+        width: 100%;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header__logo">
+      <a href="index.html"><img src="../hb/images/Isotipo-hon.png" alt="Logo Hon Design"></a>
+    </div>
+    <div class="header__search">
+      <label for="search-input" class="sr-only">Buscar nivel</label>
+      <input type="text" id="search-input" placeholder="Enter value">
+      <button type="button" id="search-clear" aria-label="Limpiar búsqueda">&times;</button>
+    </div>
+    <div class="header__auth">
+      <button class="btn btn--primary">Iniciar sesión</button>
+      <button class="btn btn--secondary">Registrarse</button>
+    </div>
+    <button class="nav__toggle" id="nav-toggle" aria-label="Mostrar menú">☰</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <ul class="nav__list" id="nav-list">
+      <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+      <li class="nav__item"><a href="nosotros.html" class="nav__link">Conócenos</a></li>
+      <li class="nav__item"><a href="contactanos.html" class="nav__link">Contacto</a></li>
+      <li class="nav__item"><a href="biblioteca.html" class="nav__link">Biblioteca</a></li>
+      <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+      <li class="nav__item"><a href="ayuda.html" class="nav__link">Ayuda</a></li>
+      <li class="nav__item"><a href="perfil.html" class="nav__link">Perfil</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container basic-package">
+      <h1 class="package-title-big">Paquete Básico: “Lanza tu Libro”</h1>
+      <p class="package-subtitle">
+        Este paquete es ideal para escritores que desean autopublicar sin complicaciones y de manera económica.
+      </p>
+      <div class="package-flex">
+        <div class="package-image">
+          <img src="../hb/images/paquete basico.jpg" alt="Lanza tu Libro">
+        </div>
+        <div class="package-details">
+          <div class="details-section">
+            <h2>Incluye:</h2>
+            <ul>
+              <li>Revisión ortotipográfica básica.</li>
+              <li>Maquetación digital para su publicación web.</li>
+              <li>Diseño de portada (plantilla ajustable).</li>
+            </ul>
+          </div>
+          <div class="details-section">
+            <h2>Precios:</h2>
+            <ul>
+              <li>Libros menos de 20 páginas: <span class="price">$45</span></li>
+              <li>Libros de más de 20 páginas a 100: <span class="price">$95</span></li>
+            </ul>
+          </div>
+          <div class="botton">
+            <button class="botton-comprar">Elegir paquete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__column">
+      <h2 class="footer__title">Contactos</h2>
+      <p><i class="fas fa-phone-alt"></i> 505-56788905</p>
+      <p><i class="fas fa-envelope"></i> HonDesign@gmail.com.ni</p>
+      <p><i class="fas fa-globe"></i> www.HonDesign.com</p>
+    </div>
+    <div class="footer__column">
+      <h2 class="footer__title">Redes Sociales</h2>
+      <ul class="social-links">
+        <li><a href="#"><i class="fab fa-instagram"></i> @Hon_Design</a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i> HonDesign</a></li>
+        <li><a href="#"><i class="fab fa-x"></i> @HonDesign77</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Toggle mobile menu
+    const navToggle = document.getElementById('nav-toggle');
+    const navList = document.getElementById('nav-list');
+    navToggle.addEventListener('click', () => {
+      navList.classList.toggle('nav__list--active');
+    });
+
+    // Clear search input
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchInput.focus();
+    });
+
+    // Highlight current page in navigation
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav__link').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    // Category buttons functionality (queda en tu código aunque no haya sección)
+    document.querySelectorAll('.category-button').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const category = e.target.textContent;
+        alert(`Mostrando contenido de la categoría: ${category}`);
+      });
+    });
+  </script>
+</body>
+</html>
